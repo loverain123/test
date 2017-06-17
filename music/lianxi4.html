@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			ul,li{list-style: none;}
+			/*#big{*/
+				/*width:200px;height:200PX;
+				background: red;
+				margin:auto;
+				position: absolute;
+				left:0;right:0;top:0;bottom:0;
+			}*/
+			/*如何让盒子居中*/
+			/*//display:table-cell和文字大小控制居中;让图片居中的方法1  ，float, position:absolute出现时，会有冲突*/
+			.zxx_align_box_4 li{float:left; margin-right:13px;width:400px;height:400px;background: red;}
+			.zxx_align_box_4 li div{display:table-cell; width:400px; height:400px; border:1px solid #beceeb; 
+									 text-align:center;
+									 
+									 vertical-align:middle;background: red;}
+			.zxx_align_box_4 li div img{vertical-align: middle;}
+			
+			
+			/*方法二*/
+			/*我个人感觉这个写法有缺陷，少用 */
+			/*.zxx_align_box_5 a{display:table-cell;
+			                 width:400px;height:400px;
+		                       background: red;font-size:128px;
+		                       text-align:center; vertical-align:middle;}
+           .zxx_align_box_5 a img{vertical-align: middle}*/
+
+
+/*如下，margin合并了是200px*/
+
+		</style>
+	</head>
+	<body>
+		<!--<div id="big">	
+		</div>-->
+		<!--方法一-->
+		<ul class="zxx_align_box_4 fix">
+		    <li>
+		        <div><img src="c1.jpg" /></div>
+		    </li>
+        </ul>
+        <!--方法二-->
+        <!--<div class="zxx_align_box_5 fix">
+		    <a href="#zhangxinxu">
+		        <img src="c1.jpg" />
+		    </a>		    
+		</div>-->
+                
+	</body>
+</html>

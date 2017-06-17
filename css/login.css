@@ -1,0 +1,104 @@
+*{margin:0px;
+   padding:0px;}
+ul,li{list-style: none;}
+a{text-decoration: none;
+  color:#000;}
+.bigboss{width:100%;
+         height:650px;
+         margin:0 auto;
+}
+
+
+.logincenter{height:400px;
+            padding-top:50px;
+            width:980px;
+            padding-bottom:25px;
+            margin:0 auto;
+             }       
+.loginleft{width:478px;
+         height:363px;
+         padding:0px 35px;
+         float: left;
+        }
+ .content{width:1200px;
+ 		height:485px;
+ 		margin:0 auto;
+ 		background: #F9F9F9;}       
+.loginright{width:362px;
+            height:357px;
+           float: right;
+           padding-top:20px;
+           background: #fff;
+} 
+.dlshang{float: left;
+		width:306px;
+		height:220px;
+		margin:0px 28px;
+		padding:10px 0px;
+	}              
+ .dlxia{float: left;
+		width:306px;
+		height:110px;
+		margin:0px 28px;
+		margin-top:10px;
+		font-size:13px;}
+.dlp1{height:21px;line-height:21px;margin-bottom:20px;}
+.dlp1 b{float: left;display: inline-block;}		      
+.dlp1 a{float: right;} 
+.dlp2{width:290px;
+     height:30px;
+     margin-left:5px;
+     margin-bottom:20px;
+    }
+.dlp2 span{float:left;
+			width:28px;
+			height:28px;
+			overflow: hidden;
+			border:1px solid #d5d5d5;} 
+.dlshang  input{border:none;}        
+.dlp2 input{float: left;
+           line-height:28px;
+           height:28px;
+           width:250px;
+           margin-left:2px;
+           border:1px solid #d5d5d5;}         
+ .dlp3{width:290px;
+     height:30px;
+     margin-left:5px;
+     margin-bottom:20px;
+     }
+.dlp3 span{float: left;
+			border:1px solid #d5d5d5;
+			width:28px;
+			overflow: hidden;
+			height:28px;}        
+.dlp3 input{float: left;
+            width:250px;
+			line-height:28px;
+            height:28px;
+            margin-left:2px;
+            border:1px solid #d5d5d5;} 
+ .dlp4{width:290px;
+      height:24px;
+      float: left;
+      line-height: 24px;
+      margin-left:5px;
+      margin-bottom:10px;
+      }
+.dlp4 a:hover{text-decoration: underline;}          
+.dlp4left{float: left;}  
+.dlp4right{float: right;}
+.dlp5{width:280px;
+       height:32px; 
+       padding:0px 5px;
+       
+      }
+.dlp5 a{float:left;
+    	    width:270px;
+            height:32px;
+            text-align:center;
+            line-height: 32px;
+            margin-left:10px;
+            color:#fff;
+            background:red;}  
+.dlp5 a:hover{background: #f60;text-decoration: none;}

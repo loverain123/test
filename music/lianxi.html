@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    html, body {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #pannel {
+        flex: 1;
+        overflow: auto;
+    }
+
+    #pannel li {
+        border-bottom: 2px solid pink;
+        text-align: center;
+        list-style: none;
+        font-size: 30px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .head {
+        height: 80px;
+        text-align: center;
+        background: orange;
+        line-height: 80px;
+    }
+
+    .last {
+        height: 80px;
+        text-align: center;
+        background: gray;
+        line-height: 80px;
+    }
+
+    #pre {
+        background: url("img/pre.png");
+    }
+
+    #next {
+        background: url("img/next.png");
+    }
+
+    #stop {
+        background: url("img/action.png");
+    }
+
+    .coll span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+    }
+
+    .coll {
+        display: flex;
+        justify-content: space-around;
+    }
+
+</style>
+<script type="text/javascript">
+    function Audio() {
+        this.choose = document.getElementById("pannel").getElementsByTagName("li");
+        this.vid = document.getElementById("vid");
+        this._show = document.getElementById("show");
+        this.pre = document.getElementById("pre");
+        this.stop = document.getElementById("stop");
+        this.next = document.getElementById("next");
+        this.flag = 1, this.index = 0;
+        var _me = this;
+        this.arr = ["小幸运", "海绵宝宝", "宠爱", "海绵宝宝", "爱囚"];
+        this.choose[0].style.background = "deeppink";
+        this.eventHandel = function () {
+            this.next.onclick = function () {
+                _me.change();
+                if (_me.index >= _me.choose.length - 1) {
+                    _me.index = -1;
+                }
+                _me.index++;
+            }
+            this.pre.onclick = function () {
+                _me.change();
+                if (_me.index <= 0) {
+                    _me.index = _me.choose.length
+                }
+                _me.index--;
+            }
+            for (let i = 0; i < this.choose.length; i++) {
+                this.choose[i].onclick = function () {
+                    _me.index = i;
+                    _me.change();
+                }
+                this.stop.onclick = function () {
+                    if (_me.flag) {
+                        _me.vid.pause();//	暂停当前播放的音频/视频
+                        _me.flag = !_me.flag;
+                        this.style.cssText = 'background:url("img/stop.png");'
+                    } else {
+                        _me.vid.play();//开始播放音频/视频
+                        _me.flag = !_me.flag;
+                        this.style.cssText = 'background:url("img/action.png");'
+                    }
+
+                }
+            }
+        }
+        this.change = function () {
+            this._show.innerHTML = _me.choose[_me.index].innerHTML;
+            _me.vid.src = 'music/' + _me.arr[_me.index] + '.mp3';
+            _me.vid.play();
+            
+            for (var j = 0; j < this.choose.length; j++) {           	
+                _me.choose[j].style.background = "";
+            }
+            _me.choose[_me.index].style.background = "deeppink";
+        }
+    }
+        window.onload = function () {
+            var _audio = new Audio();
+            _audio.eventHandel();
+        }
+</script>
+<body>
+<h1 class="head">音悦台</h1>
+<ul id="pannel">
+    <li>小幸运-田馥甄</li>
+    <li>海绵宝宝-回音哥</li>
+    <li>宠爱</li>
+    <li>海绵宝宝-回音哥</li>
+    <li>爱囚-庄心妍</li>
+</ul>
+<audio src="music/小幸运.mp3" id="vid" style="height:50px; width: 100%" autoplay></audio>
+<div class="coll">
+	<!--上一首歌曲-->
+    <span id="pre"></span>
+    <!--暂停键-->
+    <span id="stop"></span>
+    <!--下一首歌曲-->
+    <span id="next"></span>
+</div>
+<h2 class="last">
+    当前播放:<span id="show"></span>
+</h2>
+</body>
+</html>
